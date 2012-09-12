@@ -76,7 +76,7 @@ return array(
 	'save_to'    => 'slug',
 	'style'      => 'slug',
 	'separator'  => '-',
-	'unqiue'     => true,
+	'unique'     => true,
 	'on_update'  => false,
 );
 ```
@@ -125,7 +125,7 @@ Right now (version 1.0) the only option is "slug" which uses Laravel's
 `separator` defines the separator used when building a slug.  Default is a
 hyphen.
 
-`unqiue` is a boolean defining whether slugs should be unique among all
+`unique` is a boolean defining whether slugs should be unique among all
 models of the given type.  For example, if you have two blog posts and both
 are called "My Blog Post", then they will both sluggify to "my-blog-post"
 (when using Sluggable's default settings).  This could be a problem, e.g. if you

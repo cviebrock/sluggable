@@ -65,7 +65,7 @@ return array(
 	 *     my-slug-1
 	 *     my-slug-2
 	 */
-	'unqiue' => true,
+	'unique' => true,
 
 	/**
 	 * Whether to update the slug value when a model is being

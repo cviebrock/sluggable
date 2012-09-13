@@ -24,12 +24,14 @@ class Sluggable {
 	public static function make( $model, $force = false )
 	{
 
-		$class = get_class($model);
 
-		// read the model config
-		if ( !( $model_config = $model::$sluggable ) ) {
-			throw new \Exception("No fields configured for slugging.");
+		// skip if the model isn't sluggable
+		if ( !isset( $model::$sluggable ) ) {
+			return true;
 		}
+
+		$model_config = $model::$sluggable;
+
 
 		// read the default config:
 		// 1. application/config/sluggable.php
@@ -60,9 +62,9 @@ class Sluggable {
 
 		if ( $build_from ) {
 
-			if ( is_array( $build_from ) ) {
+			if ( !is_array( $build_from ) ) {
 
-				$build_from = array( $buildfrom );
+				$build_from = array( $build_from );
 
 			}
 
@@ -88,19 +90,19 @@ class Sluggable {
 				break;
 		}
 
-
 		// check for uniqueness?
 
 		if ( $unique ) {
 
-			$test = $class::where( $save_to, 'LIKE', $slug.'%' )
+			$class = get_class($model);
+
+			$last = $class::where( $save_to, 'LIKE', $slug.'%' )
 				->order_by( $save_to, 'DESC' )
-				->take(1)
-				->get( $save_to );
+				->first();
 
-			if ( $test ) {
+			if ( $last ) {
 
-				$idx = substr( $test->{$save_to} , strlen($slug) );
+				$idx = substr( $last->{$save_to} , strlen($slug) );
 				$idx = ltrim( $idx, $separator );
 				$idx = intval( $idx );
 				$idx++;
@@ -121,3 +123,5 @@ class Sluggable {
 		return true;
 
 	}
+
+}

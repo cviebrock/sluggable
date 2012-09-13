@@ -16,7 +16,7 @@ class Sluggable {
 
 	/**
 	 * Method that gets fired when the eloquent model is saved.
-	 * Handles the slugging
+	 * Handles the slugging.
 	 *
 	 * @param  Model   $model
 	 * @return bool

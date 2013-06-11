@@ -4,8 +4,13 @@ Easy automatic slug generation for your Eloquent models.
 
 > ### NOTE
 > This bundle is designed for Laravel 3.
-> If you are running Laravel 4, then you should be using the package
-> [cviebrock/eloquent-sluggable](https://packagist.org/packages/cviebrock/eloquent-sluggable)
+> If you are running Laravel 4, then you should be using the L4 package:
+> __cviebrock/eloquent-sluggable__
+>
+> - [Github link](https://github.com/cviebrock/eloquent-sluggable)
+> - [Packagist link](https://packagist.org/packages/cviebrock/eloquent-sluggable)
+>
+> Configuration is almost identical, so migrating from L3 to L4 shouldn't be a pain!
 
 
 

@@ -1,7 +1,11 @@
 # Sluggable
-=========
 
 Easy automatic slug generation for your Eloquent models.
+
+> ### NOTE
+> This bundle is designed for Laravel 3.
+> If you are running Laravel 4, then you should be using the package
+> [cviebrock/eloquent-sluggable](https://packagist.org/packages/cviebrock/eloquent-sluggable)
 
 
 
